@@ -20,7 +20,7 @@ Password::Password()
 
 Password::~Password()
 {
-	ListArrayIterator<T>* iter = new ListArray<String>;
+	ListArrayIterator<String>* iter = viable_words->iterator();
 	
 	while (iter->hasNext())
 	{
