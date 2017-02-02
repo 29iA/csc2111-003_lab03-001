@@ -37,6 +37,10 @@ void Password::addWord(String* word)
 {
 	viable_words->add(word);
 	all_words->add(word);
+	
+	//If length exceeded, then what?
+	if (len == 0)
+		len = word->length();
 }
 
 void Password::guess(int try_password, int num_matches)
