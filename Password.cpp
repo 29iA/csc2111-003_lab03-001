@@ -13,17 +13,30 @@ int Password::getNumMatches(String* curr_word, String* word_guess)
 //Public methods
 Password::Password()
 {
-	
+	viable_words = new ListArray<String>;
+	all_words = new ListArray<String>;
+	len = 0;
 }
 
 Password::~Password()
 {
+	ListArrayIterator<T>* iter = new ListArray<String>;
 	
+	while (iter->hasNext())
+	{
+		String* word = iter->next();
+		delete word;
+	}
+	
+	delete iter;
+	delete viable_words;
+	delete all_words;
 }
 
 void Password::addWord(String* word)
 {
-	
+	viable_words->add(word);
+	all_words->add(word);
 }
 
 void Password::guess(int try_password, int num_matches)

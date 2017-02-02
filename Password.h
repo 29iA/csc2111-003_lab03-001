@@ -2,10 +2,14 @@
 #define PASSWORD_H
 
 //complete the includes
+#include "Text.h"
+#include "ListArray.h"
 using CSC2110::String;
-namespace CSC2110
 
-template < class String >
+// namespace CSC2110
+// {
+// template < class String >
+
 class Password
 {
    private:
