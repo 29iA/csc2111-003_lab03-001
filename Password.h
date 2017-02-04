@@ -5,11 +5,8 @@
 #include "Text.h"
 #include "ListArray.h"
 using CSC2110::String;
-
-// namespace CSC2110
-// {
-// template < class String >
-
+using CSC2110::ListArray;
+using CSC2110::ListArrayIterator;
 class Password
 {
    private:
