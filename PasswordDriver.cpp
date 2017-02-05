@@ -1,5 +1,11 @@
 #include "Password.h"
 //fill in includes, don't forget namespaces
+#include "Keyboard.h"
+#include "ReadFile.h"
+#include "WriteFile.h"
+using CSC2110::ListArray;
+using CSC2110::ListArrayIterator;
+using CSC2110::String;
 
 #include <iostream>
 using namespace std;
