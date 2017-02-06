@@ -4,6 +4,7 @@
 using namespace std;
 
 //Private methods
+//This function compairs the individual letters of the guess words and the word in the listArray
 int Password::getNumMatches(String* curr_word, String* word_guess)
 {
 	char* current = curr_word->getText();
@@ -19,6 +20,7 @@ int Password::getNumMatches(String* curr_word, String* word_guess)
 }
 
 //Public methods
+//This function creates two new listArrays and initializes an integer
 Password::Password()
 {
 	viable_words = new ListArray<String>;
@@ -26,6 +28,7 @@ Password::Password()
 	len = 0;
 }
 
+//This function deletes all the elements in the listArray using a listArrayIterator and the list array iterator
 Password::~Password()
 {
 	ListArrayIterator<String>* iter = all_words->iterator();
@@ -41,6 +44,7 @@ Password::~Password()
 	delete all_words;
 }
 
+//This function adds a word to the listArrays and if it is the first word sets the length to the length of the word
 void Password::addWord(String* word)
 {
 	viable_words->add(word);
@@ -52,6 +56,8 @@ void Password::addWord(String* word)
 	}
 }
 
+//This function validates the guess and if the number of matches is not equal to the number of matches that the user inputs
+//and if not then it removes the word from the viable_words array else the counter is incremented
 void Password::guess(int try_password, int num_matches)
 {
 	int x = 1;
@@ -71,10 +77,13 @@ void Password::guess(int try_password, int num_matches)
 	
 }
 
+//This functions return the size of the array of viable words
 int Password::getNumberOfPasswordsLeft()
 {
 	return viable_words->size();
 }
+
+//This function uses an iterator to display the array of viable words
 void Password::displayViableWords()
 {
 	ListArrayIterator<String>* iter = viable_words->iterator();
@@ -87,6 +96,7 @@ void Password::displayViableWords()
 	}
 	delete iter;
 }
+
 int Password::bestGuess()
 {
    int best_guess_index = -1;
@@ -148,8 +158,9 @@ int Password::bestGuess()
    return best_guess_index;  //return a 1-based index into the all_words list of words (careful)
 }
 
+//This function validates the index and returns the word in that index in the array of all words
 String* Password::getOriginalWord(int index)
 {
 	if (0 < index && index < all_words->size())
-	return all_words->get(index);
+		return all_words->get(index);
 }

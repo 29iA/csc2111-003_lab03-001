@@ -21,7 +21,7 @@ all: Lab03
 
 Lab03: 	$(FILES)
 			$(LINK) $(FILES) $(LIBS) -o $(EXECUTABLE)
-			$(EXECUTABLE)
+			$(EXECUTABLE) Lab03.exe
 
 Password.o:		
 			$(COMPILE) Password.cpp
